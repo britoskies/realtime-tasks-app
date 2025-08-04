@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:13
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_DB: tasks
+      POSTGRES_USER: britoskies
+      POSTGRES_PASSWORD: 1234
+    networks:
+      - app_network
+
+networks:
+  app_network:
