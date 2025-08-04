@@ -19,10 +19,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type User = $Result.DefaultSelection<Prisma.$UserPayload>
 /**
- * Model Tasks
+ * Model Task
  * 
  */
-export type Tasks = $Result.DefaultSelection<Prisma.$TasksPayload>
+export type Task = $Result.DefaultSelection<Prisma.$TaskPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -160,14 +160,14 @@ export class PrismaClient<
   get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.tasks`: Exposes CRUD operations for the **Tasks** model.
+   * `prisma.task`: Exposes CRUD operations for the **Task** model.
     * Example usage:
     * ```ts
     * // Fetch zero or more Tasks
-    * const tasks = await prisma.tasks.findMany()
+    * const tasks = await prisma.task.findMany()
     * ```
     */
-  get tasks(): Prisma.TasksDelegate<ExtArgs, ClientOptions>;
+  get task(): Prisma.TaskDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -609,7 +609,7 @@ export namespace Prisma {
 
   export const ModelName: {
     User: 'User',
-    Tasks: 'Tasks'
+    Task: 'Task'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -628,7 +628,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "tasks"
+      modelProps: "user" | "task"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -706,77 +706,77 @@ export namespace Prisma {
           }
         }
       }
-      Tasks: {
-        payload: Prisma.$TasksPayload<ExtArgs>
-        fields: Prisma.TasksFieldRefs
+      Task: {
+        payload: Prisma.$TaskPayload<ExtArgs>
+        fields: Prisma.TaskFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.TasksFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload> | null
+            args: Prisma.TaskFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.TasksFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload>
+            args: Prisma.TaskFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload>
           }
           findFirst: {
-            args: Prisma.TasksFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload> | null
+            args: Prisma.TaskFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.TasksFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload>
+            args: Prisma.TaskFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload>
           }
           findMany: {
-            args: Prisma.TasksFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload>[]
+            args: Prisma.TaskFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload>[]
           }
           create: {
-            args: Prisma.TasksCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload>
+            args: Prisma.TaskCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload>
           }
           createMany: {
-            args: Prisma.TasksCreateManyArgs<ExtArgs>
+            args: Prisma.TaskCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.TasksCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload>[]
+            args: Prisma.TaskCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload>[]
           }
           delete: {
-            args: Prisma.TasksDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload>
+            args: Prisma.TaskDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload>
           }
           update: {
-            args: Prisma.TasksUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload>
+            args: Prisma.TaskUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload>
           }
           deleteMany: {
-            args: Prisma.TasksDeleteManyArgs<ExtArgs>
+            args: Prisma.TaskDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.TasksUpdateManyArgs<ExtArgs>
+            args: Prisma.TaskUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.TasksUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload>[]
+            args: Prisma.TaskUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload>[]
           }
           upsert: {
-            args: Prisma.TasksUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$TasksPayload>
+            args: Prisma.TaskUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TaskPayload>
           }
           aggregate: {
-            args: Prisma.TasksAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateTasks>
+            args: Prisma.TaskAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTask>
           }
           groupBy: {
-            args: Prisma.TasksGroupByArgs<ExtArgs>
-            result: $Utils.Optional<TasksGroupByOutputType>[]
+            args: Prisma.TaskGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TaskGroupByOutputType>[]
           }
           count: {
-            args: Prisma.TasksCountArgs<ExtArgs>
-            result: $Utils.Optional<TasksCountAggregateOutputType> | number
+            args: Prisma.TaskCountArgs<ExtArgs>
+            result: $Utils.Optional<TaskCountAggregateOutputType> | number
           }
         }
       }
@@ -873,7 +873,7 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     user?: UserOmit
-    tasks?: TasksOmit
+    task?: TaskOmit
   }
 
   /* Types for Logging */
@@ -967,6 +967,36 @@ export namespace Prisma {
    * Count Types
    */
 
+
+  /**
+   * Count Type UserCountOutputType
+   */
+
+  export type UserCountOutputType = {
+    tasks: number
+  }
+
+  export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    tasks?: boolean | UserCountOutputTypeCountTasksArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UserCountOutputType
+     */
+    select?: UserCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountTasksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TaskWhereInput
+  }
 
 
   /**
@@ -1156,8 +1186,8 @@ export namespace Prisma {
     updatedAt: Date
     email: string
     hash: string
-    firstName: string
-    lastName: string
+    firstName: string | null
+    lastName: string | null
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
@@ -1187,6 +1217,8 @@ export namespace Prisma {
     hash?: boolean
     firstName?: boolean
     lastName?: boolean
+    tasks?: boolean | User$tasksArgs<ExtArgs>
+    _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1220,18 +1252,26 @@ export namespace Prisma {
   }
 
   export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "email" | "hash" | "firstName" | "lastName", ExtArgs["result"]["user"]>
+  export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    tasks?: boolean | User$tasksArgs<ExtArgs>
+    _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type UserIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
-    objects: {}
+    objects: {
+      tasks: Prisma.$TaskPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       createdAt: Date
       updatedAt: Date
       email: string
       hash: string
-      firstName: string
-      lastName: string
+      firstName: string | null
+      lastName: string | null
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1626,6 +1666,7 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    tasks<T extends User$tasksArgs<ExtArgs> = {}>(args?: Subset<T, User$tasksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1679,6 +1720,10 @@ export namespace Prisma {
      */
     omit?: UserOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
+    /**
      * Filter, which User to fetch.
      */
     where: UserWhereUniqueInput
@@ -1697,6 +1742,10 @@ export namespace Prisma {
      */
     omit?: UserOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
+    /**
      * Filter, which User to fetch.
      */
     where: UserWhereUniqueInput
@@ -1714,6 +1763,10 @@ export namespace Prisma {
      * Omit specific fields from the User
      */
     omit?: UserOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
     /**
      * Filter, which User to fetch.
      */
@@ -1763,6 +1816,10 @@ export namespace Prisma {
      */
     omit?: UserOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
+    /**
      * Filter, which User to fetch.
      */
     where?: UserWhereInput
@@ -1811,6 +1868,10 @@ export namespace Prisma {
      */
     omit?: UserOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
+    /**
      * Filter, which Users to fetch.
      */
     where?: UserWhereInput
@@ -1853,6 +1914,10 @@ export namespace Prisma {
      * Omit specific fields from the User
      */
     omit?: UserOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
     /**
      * The data needed to create a User.
      */
@@ -1901,6 +1966,10 @@ export namespace Prisma {
      * Omit specific fields from the User
      */
     omit?: UserOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
     /**
      * The data needed to update a User.
      */
@@ -1968,6 +2037,10 @@ export namespace Prisma {
      */
     omit?: UserOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
+    /**
      * The filter to search for the User to update in case it exists.
      */
     where: UserWhereUniqueInput
@@ -1994,6 +2067,10 @@ export namespace Prisma {
      */
     omit?: UserOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
+    /**
      * Filter which User to delete.
      */
     where: UserWhereUniqueInput
@@ -2014,6 +2091,30 @@ export namespace Prisma {
   }
 
   /**
+   * User.tasks
+   */
+  export type User$tasksArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Task
+     */
+    select?: TaskSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Task
+     */
+    omit?: TaskOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TaskInclude<ExtArgs> | null
+    where?: TaskWhereInput
+    orderBy?: TaskOrderByWithRelationInput | TaskOrderByWithRelationInput[]
+    cursor?: TaskWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: TaskScalarFieldEnum | TaskScalarFieldEnum[]
+  }
+
+  /**
    * User without action
    */
   export type UserDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2025,111 +2126,125 @@ export namespace Prisma {
      * Omit specific fields from the User
      */
     omit?: UserOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Tasks
+   * Model Task
    */
 
-  export type AggregateTasks = {
-    _count: TasksCountAggregateOutputType | null
-    _avg: TasksAvgAggregateOutputType | null
-    _sum: TasksSumAggregateOutputType | null
-    _min: TasksMinAggregateOutputType | null
-    _max: TasksMaxAggregateOutputType | null
+  export type AggregateTask = {
+    _count: TaskCountAggregateOutputType | null
+    _avg: TaskAvgAggregateOutputType | null
+    _sum: TaskSumAggregateOutputType | null
+    _min: TaskMinAggregateOutputType | null
+    _max: TaskMaxAggregateOutputType | null
   }
 
-  export type TasksAvgAggregateOutputType = {
+  export type TaskAvgAggregateOutputType = {
     id: number | null
+    userId: number | null
   }
 
-  export type TasksSumAggregateOutputType = {
+  export type TaskSumAggregateOutputType = {
     id: number | null
+    userId: number | null
   }
 
-  export type TasksMinAggregateOutputType = {
-    id: number | null
-    createdAt: Date | null
-    updatedAt: Date | null
-    title: string | null
-    description: string | null
-    isDone: boolean | null
-  }
-
-  export type TasksMaxAggregateOutputType = {
+  export type TaskMinAggregateOutputType = {
     id: number | null
     createdAt: Date | null
     updatedAt: Date | null
     title: string | null
     description: string | null
     isDone: boolean | null
+    userId: number | null
   }
 
-  export type TasksCountAggregateOutputType = {
+  export type TaskMaxAggregateOutputType = {
+    id: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    title: string | null
+    description: string | null
+    isDone: boolean | null
+    userId: number | null
+  }
+
+  export type TaskCountAggregateOutputType = {
     id: number
     createdAt: number
     updatedAt: number
     title: number
     description: number
     isDone: number
+    userId: number
     _all: number
   }
 
 
-  export type TasksAvgAggregateInputType = {
+  export type TaskAvgAggregateInputType = {
     id?: true
+    userId?: true
   }
 
-  export type TasksSumAggregateInputType = {
+  export type TaskSumAggregateInputType = {
     id?: true
+    userId?: true
   }
 
-  export type TasksMinAggregateInputType = {
+  export type TaskMinAggregateInputType = {
     id?: true
     createdAt?: true
     updatedAt?: true
     title?: true
     description?: true
     isDone?: true
+    userId?: true
   }
 
-  export type TasksMaxAggregateInputType = {
+  export type TaskMaxAggregateInputType = {
     id?: true
     createdAt?: true
     updatedAt?: true
     title?: true
     description?: true
     isDone?: true
+    userId?: true
   }
 
-  export type TasksCountAggregateInputType = {
+  export type TaskCountAggregateInputType = {
     id?: true
     createdAt?: true
     updatedAt?: true
     title?: true
     description?: true
     isDone?: true
+    userId?: true
     _all?: true
   }
 
-  export type TasksAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Tasks to aggregate.
+     * Filter which Task to aggregate.
      */
-    where?: TasksWhereInput
+    where?: TaskWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Tasks to fetch.
      */
-    orderBy?: TasksOrderByWithRelationInput | TasksOrderByWithRelationInput[]
+    orderBy?: TaskOrderByWithRelationInput | TaskOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: TasksWhereUniqueInput
+    cursor?: TaskWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -2147,127 +2262,146 @@ export namespace Prisma {
      * 
      * Count returned Tasks
     **/
-    _count?: true | TasksCountAggregateInputType
+    _count?: true | TaskCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: TasksAvgAggregateInputType
+    _avg?: TaskAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: TasksSumAggregateInputType
+    _sum?: TaskSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: TasksMinAggregateInputType
+    _min?: TaskMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: TasksMaxAggregateInputType
+    _max?: TaskMaxAggregateInputType
   }
 
-  export type GetTasksAggregateType<T extends TasksAggregateArgs> = {
-        [P in keyof T & keyof AggregateTasks]: P extends '_count' | 'count'
+  export type GetTaskAggregateType<T extends TaskAggregateArgs> = {
+        [P in keyof T & keyof AggregateTask]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateTasks[P]>
-      : GetScalarType<T[P], AggregateTasks[P]>
+        : GetScalarType<T[P], AggregateTask[P]>
+      : GetScalarType<T[P], AggregateTask[P]>
   }
 
 
 
 
-  export type TasksGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: TasksWhereInput
-    orderBy?: TasksOrderByWithAggregationInput | TasksOrderByWithAggregationInput[]
-    by: TasksScalarFieldEnum[] | TasksScalarFieldEnum
-    having?: TasksScalarWhereWithAggregatesInput
+  export type TaskGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TaskWhereInput
+    orderBy?: TaskOrderByWithAggregationInput | TaskOrderByWithAggregationInput[]
+    by: TaskScalarFieldEnum[] | TaskScalarFieldEnum
+    having?: TaskScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: TasksCountAggregateInputType | true
-    _avg?: TasksAvgAggregateInputType
-    _sum?: TasksSumAggregateInputType
-    _min?: TasksMinAggregateInputType
-    _max?: TasksMaxAggregateInputType
+    _count?: TaskCountAggregateInputType | true
+    _avg?: TaskAvgAggregateInputType
+    _sum?: TaskSumAggregateInputType
+    _min?: TaskMinAggregateInputType
+    _max?: TaskMaxAggregateInputType
   }
 
-  export type TasksGroupByOutputType = {
+  export type TaskGroupByOutputType = {
     id: number
     createdAt: Date
     updatedAt: Date
     title: string
     description: string
     isDone: boolean
-    _count: TasksCountAggregateOutputType | null
-    _avg: TasksAvgAggregateOutputType | null
-    _sum: TasksSumAggregateOutputType | null
-    _min: TasksMinAggregateOutputType | null
-    _max: TasksMaxAggregateOutputType | null
+    userId: number
+    _count: TaskCountAggregateOutputType | null
+    _avg: TaskAvgAggregateOutputType | null
+    _sum: TaskSumAggregateOutputType | null
+    _min: TaskMinAggregateOutputType | null
+    _max: TaskMaxAggregateOutputType | null
   }
 
-  type GetTasksGroupByPayload<T extends TasksGroupByArgs> = Prisma.PrismaPromise<
+  type GetTaskGroupByPayload<T extends TaskGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<TasksGroupByOutputType, T['by']> &
+      PickEnumerable<TaskGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof TasksGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof TaskGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], TasksGroupByOutputType[P]>
-            : GetScalarType<T[P], TasksGroupByOutputType[P]>
+              : GetScalarType<T[P], TaskGroupByOutputType[P]>
+            : GetScalarType<T[P], TaskGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type TasksSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type TaskSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     title?: boolean
     description?: boolean
     isDone?: boolean
-  }, ExtArgs["result"]["tasks"]>
+    userId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["task"]>
 
-  export type TasksSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type TaskSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     title?: boolean
     description?: boolean
     isDone?: boolean
-  }, ExtArgs["result"]["tasks"]>
+    userId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["task"]>
 
-  export type TasksSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type TaskSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     title?: boolean
     description?: boolean
     isDone?: boolean
-  }, ExtArgs["result"]["tasks"]>
+    userId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["task"]>
 
-  export type TasksSelectScalar = {
+  export type TaskSelectScalar = {
     id?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     title?: boolean
     description?: boolean
     isDone?: boolean
+    userId?: boolean
   }
 
-  export type TasksOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "title" | "description" | "isDone", ExtArgs["result"]["tasks"]>
+  export type TaskOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "createdAt" | "updatedAt" | "title" | "description" | "isDone" | "userId", ExtArgs["result"]["task"]>
+  export type TaskInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type TaskIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type TaskIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
 
-  export type $TasksPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Tasks"
-    objects: {}
+  export type $TaskPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Task"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+    }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       createdAt: Date
@@ -2275,136 +2409,137 @@ export namespace Prisma {
       title: string
       description: string
       isDone: boolean
-    }, ExtArgs["result"]["tasks"]>
+      userId: number
+    }, ExtArgs["result"]["task"]>
     composites: {}
   }
 
-  type TasksGetPayload<S extends boolean | null | undefined | TasksDefaultArgs> = $Result.GetResult<Prisma.$TasksPayload, S>
+  type TaskGetPayload<S extends boolean | null | undefined | TaskDefaultArgs> = $Result.GetResult<Prisma.$TaskPayload, S>
 
-  type TasksCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<TasksFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: TasksCountAggregateInputType | true
+  type TaskCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TaskFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TaskCountAggregateInputType | true
     }
 
-  export interface TasksDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Tasks'], meta: { name: 'Tasks' } }
+  export interface TaskDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Task'], meta: { name: 'Task' } }
     /**
-     * Find zero or one Tasks that matches the filter.
-     * @param {TasksFindUniqueArgs} args - Arguments to find a Tasks
+     * Find zero or one Task that matches the filter.
+     * @param {TaskFindUniqueArgs} args - Arguments to find a Task
      * @example
-     * // Get one Tasks
-     * const tasks = await prisma.tasks.findUnique({
+     * // Get one Task
+     * const task = await prisma.task.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends TasksFindUniqueArgs>(args: SelectSubset<T, TasksFindUniqueArgs<ExtArgs>>): Prisma__TasksClient<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends TaskFindUniqueArgs>(args: SelectSubset<T, TaskFindUniqueArgs<ExtArgs>>): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Tasks that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Task that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {TasksFindUniqueOrThrowArgs} args - Arguments to find a Tasks
+     * @param {TaskFindUniqueOrThrowArgs} args - Arguments to find a Task
      * @example
-     * // Get one Tasks
-     * const tasks = await prisma.tasks.findUniqueOrThrow({
+     * // Get one Task
+     * const task = await prisma.task.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends TasksFindUniqueOrThrowArgs>(args: SelectSubset<T, TasksFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TasksClient<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends TaskFindUniqueOrThrowArgs>(args: SelectSubset<T, TaskFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Tasks that matches the filter.
+     * Find the first Task that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TasksFindFirstArgs} args - Arguments to find a Tasks
+     * @param {TaskFindFirstArgs} args - Arguments to find a Task
      * @example
-     * // Get one Tasks
-     * const tasks = await prisma.tasks.findFirst({
+     * // Get one Task
+     * const task = await prisma.task.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends TasksFindFirstArgs>(args?: SelectSubset<T, TasksFindFirstArgs<ExtArgs>>): Prisma__TasksClient<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends TaskFindFirstArgs>(args?: SelectSubset<T, TaskFindFirstArgs<ExtArgs>>): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Tasks that matches the filter or
+     * Find the first Task that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TasksFindFirstOrThrowArgs} args - Arguments to find a Tasks
+     * @param {TaskFindFirstOrThrowArgs} args - Arguments to find a Task
      * @example
-     * // Get one Tasks
-     * const tasks = await prisma.tasks.findFirstOrThrow({
+     * // Get one Task
+     * const task = await prisma.task.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends TasksFindFirstOrThrowArgs>(args?: SelectSubset<T, TasksFindFirstOrThrowArgs<ExtArgs>>): Prisma__TasksClient<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends TaskFindFirstOrThrowArgs>(args?: SelectSubset<T, TaskFindFirstOrThrowArgs<ExtArgs>>): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Find zero or more Tasks that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TasksFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {TaskFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Tasks
-     * const tasks = await prisma.tasks.findMany()
+     * const tasks = await prisma.task.findMany()
      * 
      * // Get first 10 Tasks
-     * const tasks = await prisma.tasks.findMany({ take: 10 })
+     * const tasks = await prisma.task.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const tasksWithIdOnly = await prisma.tasks.findMany({ select: { id: true } })
+     * const taskWithIdOnly = await prisma.task.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends TasksFindManyArgs>(args?: SelectSubset<T, TasksFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends TaskFindManyArgs>(args?: SelectSubset<T, TaskFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Tasks.
-     * @param {TasksCreateArgs} args - Arguments to create a Tasks.
+     * Create a Task.
+     * @param {TaskCreateArgs} args - Arguments to create a Task.
      * @example
-     * // Create one Tasks
-     * const Tasks = await prisma.tasks.create({
+     * // Create one Task
+     * const Task = await prisma.task.create({
      *   data: {
-     *     // ... data to create a Tasks
+     *     // ... data to create a Task
      *   }
      * })
      * 
      */
-    create<T extends TasksCreateArgs>(args: SelectSubset<T, TasksCreateArgs<ExtArgs>>): Prisma__TasksClient<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends TaskCreateArgs>(args: SelectSubset<T, TaskCreateArgs<ExtArgs>>): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Create many Tasks.
-     * @param {TasksCreateManyArgs} args - Arguments to create many Tasks.
+     * @param {TaskCreateManyArgs} args - Arguments to create many Tasks.
      * @example
      * // Create many Tasks
-     * const tasks = await prisma.tasks.createMany({
+     * const task = await prisma.task.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends TasksCreateManyArgs>(args?: SelectSubset<T, TasksCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends TaskCreateManyArgs>(args?: SelectSubset<T, TaskCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Create many Tasks and returns the data saved in the database.
-     * @param {TasksCreateManyAndReturnArgs} args - Arguments to create many Tasks.
+     * @param {TaskCreateManyAndReturnArgs} args - Arguments to create many Tasks.
      * @example
      * // Create many Tasks
-     * const tasks = await prisma.tasks.createManyAndReturn({
+     * const task = await prisma.task.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
      * // Create many Tasks and only return the `id`
-     * const tasksWithIdOnly = await prisma.tasks.createManyAndReturn({
+     * const taskWithIdOnly = await prisma.task.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2414,28 +2549,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends TasksCreateManyAndReturnArgs>(args?: SelectSubset<T, TasksCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends TaskCreateManyAndReturnArgs>(args?: SelectSubset<T, TaskCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Tasks.
-     * @param {TasksDeleteArgs} args - Arguments to delete one Tasks.
+     * Delete a Task.
+     * @param {TaskDeleteArgs} args - Arguments to delete one Task.
      * @example
-     * // Delete one Tasks
-     * const Tasks = await prisma.tasks.delete({
+     * // Delete one Task
+     * const Task = await prisma.task.delete({
      *   where: {
-     *     // ... filter to delete one Tasks
+     *     // ... filter to delete one Task
      *   }
      * })
      * 
      */
-    delete<T extends TasksDeleteArgs>(args: SelectSubset<T, TasksDeleteArgs<ExtArgs>>): Prisma__TasksClient<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends TaskDeleteArgs>(args: SelectSubset<T, TaskDeleteArgs<ExtArgs>>): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Tasks.
-     * @param {TasksUpdateArgs} args - Arguments to update one Tasks.
+     * Update one Task.
+     * @param {TaskUpdateArgs} args - Arguments to update one Task.
      * @example
-     * // Update one Tasks
-     * const tasks = await prisma.tasks.update({
+     * // Update one Task
+     * const task = await prisma.task.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2445,30 +2580,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends TasksUpdateArgs>(args: SelectSubset<T, TasksUpdateArgs<ExtArgs>>): Prisma__TasksClient<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends TaskUpdateArgs>(args: SelectSubset<T, TaskUpdateArgs<ExtArgs>>): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
      * Delete zero or more Tasks.
-     * @param {TasksDeleteManyArgs} args - Arguments to filter Tasks to delete.
+     * @param {TaskDeleteManyArgs} args - Arguments to filter Tasks to delete.
      * @example
      * // Delete a few Tasks
-     * const { count } = await prisma.tasks.deleteMany({
+     * const { count } = await prisma.task.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends TasksDeleteManyArgs>(args?: SelectSubset<T, TasksDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends TaskDeleteManyArgs>(args?: SelectSubset<T, TaskDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Tasks.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TasksUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {TaskUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
      * // Update many Tasks
-     * const tasks = await prisma.tasks.updateMany({
+     * const task = await prisma.task.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2478,14 +2613,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends TasksUpdateManyArgs>(args: SelectSubset<T, TasksUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends TaskUpdateManyArgs>(args: SelectSubset<T, TaskUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Update zero or more Tasks and returns the data updated in the database.
-     * @param {TasksUpdateManyAndReturnArgs} args - Arguments to update many Tasks.
+     * @param {TaskUpdateManyAndReturnArgs} args - Arguments to update many Tasks.
      * @example
      * // Update many Tasks
-     * const tasks = await prisma.tasks.updateManyAndReturn({
+     * const task = await prisma.task.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2495,7 +2630,7 @@ export namespace Prisma {
      * })
      * 
      * // Update zero or more Tasks and only return the `id`
-     * const tasksWithIdOnly = await prisma.tasks.updateManyAndReturn({
+     * const taskWithIdOnly = await prisma.task.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2508,56 +2643,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends TasksUpdateManyAndReturnArgs>(args: SelectSubset<T, TasksUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends TaskUpdateManyAndReturnArgs>(args: SelectSubset<T, TaskUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Tasks.
-     * @param {TasksUpsertArgs} args - Arguments to update or create a Tasks.
+     * Create or update one Task.
+     * @param {TaskUpsertArgs} args - Arguments to update or create a Task.
      * @example
-     * // Update or create a Tasks
-     * const tasks = await prisma.tasks.upsert({
+     * // Update or create a Task
+     * const task = await prisma.task.upsert({
      *   create: {
-     *     // ... data to create a Tasks
+     *     // ... data to create a Task
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Tasks we want to update
+     *     // ... the filter for the Task we want to update
      *   }
      * })
      */
-    upsert<T extends TasksUpsertArgs>(args: SelectSubset<T, TasksUpsertArgs<ExtArgs>>): Prisma__TasksClient<$Result.GetResult<Prisma.$TasksPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends TaskUpsertArgs>(args: SelectSubset<T, TaskUpsertArgs<ExtArgs>>): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
      * Count the number of Tasks.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TasksCountArgs} args - Arguments to filter Tasks to count.
+     * @param {TaskCountArgs} args - Arguments to filter Tasks to count.
      * @example
      * // Count the number of Tasks
-     * const count = await prisma.tasks.count({
+     * const count = await prisma.task.count({
      *   where: {
      *     // ... the filter for the Tasks we want to count
      *   }
      * })
     **/
-    count<T extends TasksCountArgs>(
-      args?: Subset<T, TasksCountArgs>,
+    count<T extends TaskCountArgs>(
+      args?: Subset<T, TaskCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], TasksCountAggregateOutputType>
+          : GetScalarType<T['select'], TaskCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Tasks.
+     * Allows you to perform aggregations operations on a Task.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TasksAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {TaskAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2577,13 +2712,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends TasksAggregateArgs>(args: Subset<T, TasksAggregateArgs>): Prisma.PrismaPromise<GetTasksAggregateType<T>>
+    aggregate<T extends TaskAggregateArgs>(args: Subset<T, TaskAggregateArgs>): Prisma.PrismaPromise<GetTaskAggregateType<T>>
 
     /**
-     * Group by Tasks.
+     * Group by Task.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TasksGroupByArgs} args - Group by arguments.
+     * @param {TaskGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2598,14 +2733,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends TasksGroupByArgs,
+      T extends TaskGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: TasksGroupByArgs['orderBy'] }
-        : { orderBy?: TasksGroupByArgs['orderBy'] },
+        ? { orderBy: TaskGroupByArgs['orderBy'] }
+        : { orderBy?: TaskGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2654,21 +2789,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, TasksGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTasksGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, TaskGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTaskGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Tasks model
+   * Fields of the Task model
    */
-  readonly fields: TasksFieldRefs;
+  readonly fields: TaskFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Tasks.
+   * The delegate class that acts as a "Promise-like" for Task.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__TasksClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__TaskClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2695,83 +2831,96 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Tasks model
+   * Fields of the Task model
    */
-  interface TasksFieldRefs {
-    readonly id: FieldRef<"Tasks", 'Int'>
-    readonly createdAt: FieldRef<"Tasks", 'DateTime'>
-    readonly updatedAt: FieldRef<"Tasks", 'DateTime'>
-    readonly title: FieldRef<"Tasks", 'String'>
-    readonly description: FieldRef<"Tasks", 'String'>
-    readonly isDone: FieldRef<"Tasks", 'Boolean'>
+  interface TaskFieldRefs {
+    readonly id: FieldRef<"Task", 'Int'>
+    readonly createdAt: FieldRef<"Task", 'DateTime'>
+    readonly updatedAt: FieldRef<"Task", 'DateTime'>
+    readonly title: FieldRef<"Task", 'String'>
+    readonly description: FieldRef<"Task", 'String'>
+    readonly isDone: FieldRef<"Task", 'Boolean'>
+    readonly userId: FieldRef<"Task", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Tasks findUnique
+   * Task findUnique
    */
-  export type TasksFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelect<ExtArgs> | null
+    select?: TaskSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
     /**
-     * Filter, which Tasks to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where: TasksWhereUniqueInput
+    include?: TaskInclude<ExtArgs> | null
+    /**
+     * Filter, which Task to fetch.
+     */
+    where: TaskWhereUniqueInput
   }
 
   /**
-   * Tasks findUniqueOrThrow
+   * Task findUniqueOrThrow
    */
-  export type TasksFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelect<ExtArgs> | null
+    select?: TaskSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
     /**
-     * Filter, which Tasks to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where: TasksWhereUniqueInput
+    include?: TaskInclude<ExtArgs> | null
+    /**
+     * Filter, which Task to fetch.
+     */
+    where: TaskWhereUniqueInput
   }
 
   /**
-   * Tasks findFirst
+   * Task findFirst
    */
-  export type TasksFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelect<ExtArgs> | null
+    select?: TaskSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
     /**
-     * Filter, which Tasks to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: TasksWhereInput
+    include?: TaskInclude<ExtArgs> | null
+    /**
+     * Filter, which Task to fetch.
+     */
+    where?: TaskWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Tasks to fetch.
      */
-    orderBy?: TasksOrderByWithRelationInput | TasksOrderByWithRelationInput[]
+    orderBy?: TaskOrderByWithRelationInput | TaskOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for searching for Tasks.
      */
-    cursor?: TasksWhereUniqueInput
+    cursor?: TaskWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -2789,37 +2938,41 @@ export namespace Prisma {
      * 
      * Filter by unique combinations of Tasks.
      */
-    distinct?: TasksScalarFieldEnum | TasksScalarFieldEnum[]
+    distinct?: TaskScalarFieldEnum | TaskScalarFieldEnum[]
   }
 
   /**
-   * Tasks findFirstOrThrow
+   * Task findFirstOrThrow
    */
-  export type TasksFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelect<ExtArgs> | null
+    select?: TaskSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
     /**
-     * Filter, which Tasks to fetch.
+     * Choose, which related nodes to fetch as well
      */
-    where?: TasksWhereInput
+    include?: TaskInclude<ExtArgs> | null
+    /**
+     * Filter, which Task to fetch.
+     */
+    where?: TaskWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Tasks to fetch.
      */
-    orderBy?: TasksOrderByWithRelationInput | TasksOrderByWithRelationInput[]
+    orderBy?: TaskOrderByWithRelationInput | TaskOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for searching for Tasks.
      */
-    cursor?: TasksWhereUniqueInput
+    cursor?: TaskWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -2837,37 +2990,41 @@ export namespace Prisma {
      * 
      * Filter by unique combinations of Tasks.
      */
-    distinct?: TasksScalarFieldEnum | TasksScalarFieldEnum[]
+    distinct?: TaskScalarFieldEnum | TaskScalarFieldEnum[]
   }
 
   /**
-   * Tasks findMany
+   * Task findMany
    */
-  export type TasksFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelect<ExtArgs> | null
+    select?: TaskSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TaskInclude<ExtArgs> | null
     /**
      * Filter, which Tasks to fetch.
      */
-    where?: TasksWhereInput
+    where?: TaskWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
      * Determine the order of Tasks to fetch.
      */
-    orderBy?: TasksOrderByWithRelationInput | TasksOrderByWithRelationInput[]
+    orderBy?: TaskOrderByWithRelationInput | TaskOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the position for listing Tasks.
      */
-    cursor?: TasksWhereUniqueInput
+    cursor?: TaskWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
@@ -2880,91 +3037,103 @@ export namespace Prisma {
      * Skip the first `n` Tasks.
      */
     skip?: number
-    distinct?: TasksScalarFieldEnum | TasksScalarFieldEnum[]
+    distinct?: TaskScalarFieldEnum | TaskScalarFieldEnum[]
   }
 
   /**
-   * Tasks create
+   * Task create
    */
-  export type TasksCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelect<ExtArgs> | null
+    select?: TaskSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
     /**
-     * The data needed to create a Tasks.
+     * Choose, which related nodes to fetch as well
      */
-    data: XOR<TasksCreateInput, TasksUncheckedCreateInput>
+    include?: TaskInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Task.
+     */
+    data: XOR<TaskCreateInput, TaskUncheckedCreateInput>
   }
 
   /**
-   * Tasks createMany
+   * Task createMany
    */
-  export type TasksCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to create many Tasks.
      */
-    data: TasksCreateManyInput | TasksCreateManyInput[]
+    data: TaskCreateManyInput | TaskCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Tasks createManyAndReturn
+   * Task createManyAndReturn
    */
-  export type TasksCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelectCreateManyAndReturn<ExtArgs> | null
+    select?: TaskSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
     /**
      * The data used to create many Tasks.
      */
-    data: TasksCreateManyInput | TasksCreateManyInput[]
+    data: TaskCreateManyInput | TaskCreateManyInput[]
     skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TaskIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Tasks update
+   * Task update
    */
-  export type TasksUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelect<ExtArgs> | null
+    select?: TaskSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
     /**
-     * The data needed to update a Tasks.
+     * Choose, which related nodes to fetch as well
      */
-    data: XOR<TasksUpdateInput, TasksUncheckedUpdateInput>
+    include?: TaskInclude<ExtArgs> | null
     /**
-     * Choose, which Tasks to update.
+     * The data needed to update a Task.
      */
-    where: TasksWhereUniqueInput
+    data: XOR<TaskUpdateInput, TaskUncheckedUpdateInput>
+    /**
+     * Choose, which Task to update.
+     */
+    where: TaskWhereUniqueInput
   }
 
   /**
-   * Tasks updateMany
+   * Task updateMany
    */
-  export type TasksUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * The data used to update Tasks.
      */
-    data: XOR<TasksUpdateManyMutationInput, TasksUncheckedUpdateManyInput>
+    data: XOR<TaskUpdateManyMutationInput, TaskUncheckedUpdateManyInput>
     /**
      * Filter which Tasks to update
      */
-    where?: TasksWhereInput
+    where?: TaskWhereInput
     /**
      * Limit how many Tasks to update.
      */
@@ -2972,83 +3141,95 @@ export namespace Prisma {
   }
 
   /**
-   * Tasks updateManyAndReturn
+   * Task updateManyAndReturn
    */
-  export type TasksUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: TaskSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
     /**
      * The data used to update Tasks.
      */
-    data: XOR<TasksUpdateManyMutationInput, TasksUncheckedUpdateManyInput>
+    data: XOR<TaskUpdateManyMutationInput, TaskUncheckedUpdateManyInput>
     /**
      * Filter which Tasks to update
      */
-    where?: TasksWhereInput
+    where?: TaskWhereInput
     /**
      * Limit how many Tasks to update.
      */
     limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TaskIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Tasks upsert
+   * Task upsert
    */
-  export type TasksUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelect<ExtArgs> | null
+    select?: TaskSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
     /**
-     * The filter to search for the Tasks to update in case it exists.
+     * Choose, which related nodes to fetch as well
      */
-    where: TasksWhereUniqueInput
+    include?: TaskInclude<ExtArgs> | null
     /**
-     * In case the Tasks found by the `where` argument doesn't exist, create a new Tasks with this data.
+     * The filter to search for the Task to update in case it exists.
      */
-    create: XOR<TasksCreateInput, TasksUncheckedCreateInput>
+    where: TaskWhereUniqueInput
     /**
-     * In case the Tasks was found with the provided `where` argument, update it with this data.
+     * In case the Task found by the `where` argument doesn't exist, create a new Task with this data.
      */
-    update: XOR<TasksUpdateInput, TasksUncheckedUpdateInput>
+    create: XOR<TaskCreateInput, TaskUncheckedCreateInput>
+    /**
+     * In case the Task was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TaskUpdateInput, TaskUncheckedUpdateInput>
   }
 
   /**
-   * Tasks delete
+   * Task delete
    */
-  export type TasksDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelect<ExtArgs> | null
+    select?: TaskSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
     /**
-     * Filter which Tasks to delete.
+     * Choose, which related nodes to fetch as well
      */
-    where: TasksWhereUniqueInput
+    include?: TaskInclude<ExtArgs> | null
+    /**
+     * Filter which Task to delete.
+     */
+    where: TaskWhereUniqueInput
   }
 
   /**
-   * Tasks deleteMany
+   * Task deleteMany
    */
-  export type TasksDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Filter which Tasks to delete
      */
-    where?: TasksWhereInput
+    where?: TaskWhereInput
     /**
      * Limit how many Tasks to delete.
      */
@@ -3056,17 +3237,21 @@ export namespace Prisma {
   }
 
   /**
-   * Tasks without action
+   * Task without action
    */
-  export type TasksDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type TaskDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Tasks
+     * Select specific fields to fetch from the Task
      */
-    select?: TasksSelect<ExtArgs> | null
+    select?: TaskSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Tasks
+     * Omit specific fields from the Task
      */
-    omit?: TasksOmit<ExtArgs> | null
+    omit?: TaskOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TaskInclude<ExtArgs> | null
   }
 
 
@@ -3097,16 +3282,17 @@ export namespace Prisma {
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-  export const TasksScalarFieldEnum: {
+  export const TaskScalarFieldEnum: {
     id: 'id',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     title: 'title',
     description: 'description',
-    isDone: 'isDone'
+    isDone: 'isDone',
+    userId: 'userId'
   };
 
-  export type TasksScalarFieldEnum = (typeof TasksScalarFieldEnum)[keyof typeof TasksScalarFieldEnum]
+  export type TaskScalarFieldEnum = (typeof TaskScalarFieldEnum)[keyof typeof TaskScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -3123,6 +3309,14 @@ export namespace Prisma {
   };
 
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -3205,8 +3399,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"User"> | Date | string
     email?: StringFilter<"User"> | string
     hash?: StringFilter<"User"> | string
-    firstName?: StringFilter<"User"> | string
-    lastName?: StringFilter<"User"> | string
+    firstName?: StringNullableFilter<"User"> | string | null
+    lastName?: StringNullableFilter<"User"> | string | null
+    tasks?: TaskListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -3215,22 +3410,24 @@ export namespace Prisma {
     updatedAt?: SortOrder
     email?: SortOrder
     hash?: SortOrder
-    firstName?: SortOrder
-    lastName?: SortOrder
+    firstName?: SortOrderInput | SortOrder
+    lastName?: SortOrderInput | SortOrder
+    tasks?: TaskOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    email?: string
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     createdAt?: DateTimeFilter<"User"> | Date | string
     updatedAt?: DateTimeFilter<"User"> | Date | string
-    email?: StringFilter<"User"> | string
     hash?: StringFilter<"User"> | string
-    firstName?: StringFilter<"User"> | string
-    lastName?: StringFilter<"User"> | string
-  }, "id">
+    firstName?: StringNullableFilter<"User"> | string | null
+    lastName?: StringNullableFilter<"User"> | string | null
+    tasks?: TaskListRelationFilter
+  }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
     id?: SortOrder
@@ -3238,8 +3435,8 @@ export namespace Prisma {
     updatedAt?: SortOrder
     email?: SortOrder
     hash?: SortOrder
-    firstName?: SortOrder
-    lastName?: SortOrder
+    firstName?: SortOrderInput | SortOrder
+    lastName?: SortOrderInput | SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -3256,67 +3453,75 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"User"> | Date | string
     email?: StringWithAggregatesFilter<"User"> | string
     hash?: StringWithAggregatesFilter<"User"> | string
-    firstName?: StringWithAggregatesFilter<"User"> | string
-    lastName?: StringWithAggregatesFilter<"User"> | string
+    firstName?: StringNullableWithAggregatesFilter<"User"> | string | null
+    lastName?: StringNullableWithAggregatesFilter<"User"> | string | null
   }
 
-  export type TasksWhereInput = {
-    AND?: TasksWhereInput | TasksWhereInput[]
-    OR?: TasksWhereInput[]
-    NOT?: TasksWhereInput | TasksWhereInput[]
-    id?: IntFilter<"Tasks"> | number
-    createdAt?: DateTimeFilter<"Tasks"> | Date | string
-    updatedAt?: DateTimeFilter<"Tasks"> | Date | string
-    title?: StringFilter<"Tasks"> | string
-    description?: StringFilter<"Tasks"> | string
-    isDone?: BoolFilter<"Tasks"> | boolean
+  export type TaskWhereInput = {
+    AND?: TaskWhereInput | TaskWhereInput[]
+    OR?: TaskWhereInput[]
+    NOT?: TaskWhereInput | TaskWhereInput[]
+    id?: IntFilter<"Task"> | number
+    createdAt?: DateTimeFilter<"Task"> | Date | string
+    updatedAt?: DateTimeFilter<"Task"> | Date | string
+    title?: StringFilter<"Task"> | string
+    description?: StringFilter<"Task"> | string
+    isDone?: BoolFilter<"Task"> | boolean
+    userId?: IntFilter<"Task"> | number
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
-  export type TasksOrderByWithRelationInput = {
+  export type TaskOrderByWithRelationInput = {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     title?: SortOrder
     description?: SortOrder
     isDone?: SortOrder
+    userId?: SortOrder
+    user?: UserOrderByWithRelationInput
   }
 
-  export type TasksWhereUniqueInput = Prisma.AtLeast<{
+  export type TaskWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: TasksWhereInput | TasksWhereInput[]
-    OR?: TasksWhereInput[]
-    NOT?: TasksWhereInput | TasksWhereInput[]
-    createdAt?: DateTimeFilter<"Tasks"> | Date | string
-    updatedAt?: DateTimeFilter<"Tasks"> | Date | string
-    title?: StringFilter<"Tasks"> | string
-    description?: StringFilter<"Tasks"> | string
-    isDone?: BoolFilter<"Tasks"> | boolean
+    AND?: TaskWhereInput | TaskWhereInput[]
+    OR?: TaskWhereInput[]
+    NOT?: TaskWhereInput | TaskWhereInput[]
+    createdAt?: DateTimeFilter<"Task"> | Date | string
+    updatedAt?: DateTimeFilter<"Task"> | Date | string
+    title?: StringFilter<"Task"> | string
+    description?: StringFilter<"Task"> | string
+    isDone?: BoolFilter<"Task"> | boolean
+    userId?: IntFilter<"Task"> | number
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "id">
 
-  export type TasksOrderByWithAggregationInput = {
+  export type TaskOrderByWithAggregationInput = {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     title?: SortOrder
     description?: SortOrder
     isDone?: SortOrder
-    _count?: TasksCountOrderByAggregateInput
-    _avg?: TasksAvgOrderByAggregateInput
-    _max?: TasksMaxOrderByAggregateInput
-    _min?: TasksMinOrderByAggregateInput
-    _sum?: TasksSumOrderByAggregateInput
+    userId?: SortOrder
+    _count?: TaskCountOrderByAggregateInput
+    _avg?: TaskAvgOrderByAggregateInput
+    _max?: TaskMaxOrderByAggregateInput
+    _min?: TaskMinOrderByAggregateInput
+    _sum?: TaskSumOrderByAggregateInput
   }
 
-  export type TasksScalarWhereWithAggregatesInput = {
-    AND?: TasksScalarWhereWithAggregatesInput | TasksScalarWhereWithAggregatesInput[]
-    OR?: TasksScalarWhereWithAggregatesInput[]
-    NOT?: TasksScalarWhereWithAggregatesInput | TasksScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"Tasks"> | number
-    createdAt?: DateTimeWithAggregatesFilter<"Tasks"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Tasks"> | Date | string
-    title?: StringWithAggregatesFilter<"Tasks"> | string
-    description?: StringWithAggregatesFilter<"Tasks"> | string
-    isDone?: BoolWithAggregatesFilter<"Tasks"> | boolean
+  export type TaskScalarWhereWithAggregatesInput = {
+    AND?: TaskScalarWhereWithAggregatesInput | TaskScalarWhereWithAggregatesInput[]
+    OR?: TaskScalarWhereWithAggregatesInput[]
+    NOT?: TaskScalarWhereWithAggregatesInput | TaskScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Task"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"Task"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Task"> | Date | string
+    title?: StringWithAggregatesFilter<"Task"> | string
+    description?: StringWithAggregatesFilter<"Task"> | string
+    isDone?: BoolWithAggregatesFilter<"Task"> | boolean
+    userId?: IntWithAggregatesFilter<"Task"> | number
   }
 
   export type UserCreateInput = {
@@ -3324,8 +3529,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     email: string
     hash: string
-    firstName: string
-    lastName: string
+    firstName?: string | null
+    lastName?: string | null
+    tasks?: TaskCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -3334,8 +3540,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     email: string
     hash: string
-    firstName: string
-    lastName: string
+    firstName?: string | null
+    lastName?: string | null
+    tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -3343,8 +3550,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     email?: StringFieldUpdateOperationsInput | string
     hash?: StringFieldUpdateOperationsInput | string
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
+    firstName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
+    tasks?: TaskUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -3353,8 +3561,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     email?: StringFieldUpdateOperationsInput | string
     hash?: StringFieldUpdateOperationsInput | string
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
+    firstName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
+    tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -3363,8 +3572,8 @@ export namespace Prisma {
     updatedAt?: Date | string
     email: string
     hash: string
-    firstName: string
-    lastName: string
+    firstName?: string | null
+    lastName?: string | null
   }
 
   export type UserUpdateManyMutationInput = {
@@ -3372,8 +3581,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     email?: StringFieldUpdateOperationsInput | string
     hash?: StringFieldUpdateOperationsInput | string
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
+    firstName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -3382,54 +3591,59 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     email?: StringFieldUpdateOperationsInput | string
     hash?: StringFieldUpdateOperationsInput | string
-    firstName?: StringFieldUpdateOperationsInput | string
-    lastName?: StringFieldUpdateOperationsInput | string
+    firstName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type TasksCreateInput = {
+  export type TaskCreateInput = {
     createdAt?: Date | string
     updatedAt?: Date | string
     title: string
     description: string
     isDone: boolean
+    user: UserCreateNestedOneWithoutTasksInput
   }
 
-  export type TasksUncheckedCreateInput = {
+  export type TaskUncheckedCreateInput = {
     id?: number
     createdAt?: Date | string
     updatedAt?: Date | string
     title: string
     description: string
     isDone: boolean
+    userId: number
   }
 
-  export type TasksUpdateInput = {
+  export type TaskUpdateInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     isDone?: BoolFieldUpdateOperationsInput | boolean
+    user?: UserUpdateOneRequiredWithoutTasksNestedInput
   }
 
-  export type TasksUncheckedUpdateInput = {
+  export type TaskUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     isDone?: BoolFieldUpdateOperationsInput | boolean
+    userId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type TasksCreateManyInput = {
+  export type TaskCreateManyInput = {
     id?: number
     createdAt?: Date | string
     updatedAt?: Date | string
     title: string
     description: string
     isDone: boolean
+    userId: number
   }
 
-  export type TasksUpdateManyMutationInput = {
+  export type TaskUpdateManyMutationInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
@@ -3437,13 +3651,14 @@ export namespace Prisma {
     isDone?: BoolFieldUpdateOperationsInput | boolean
   }
 
-  export type TasksUncheckedUpdateManyInput = {
+  export type TaskUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     title?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     isDone?: BoolFieldUpdateOperationsInput | boolean
+    userId?: IntFieldUpdateOperationsInput | number
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -3481,6 +3696,36 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type TaskListRelationFilter = {
+    every?: TaskWhereInput
+    some?: TaskWhereInput
+    none?: TaskWhereInput
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
+  export type TaskOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type UserCountOrderByAggregateInput = {
@@ -3569,44 +3814,72 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type TasksCountOrderByAggregateInput = {
+  export type UserScalarRelationFilter = {
+    is?: UserWhereInput
+    isNot?: UserWhereInput
+  }
+
+  export type TaskCountOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     title?: SortOrder
     description?: SortOrder
     isDone?: SortOrder
+    userId?: SortOrder
   }
 
-  export type TasksAvgOrderByAggregateInput = {
+  export type TaskAvgOrderByAggregateInput = {
     id?: SortOrder
+    userId?: SortOrder
   }
 
-  export type TasksMaxOrderByAggregateInput = {
-    id?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    title?: SortOrder
-    description?: SortOrder
-    isDone?: SortOrder
-  }
-
-  export type TasksMinOrderByAggregateInput = {
+  export type TaskMaxOrderByAggregateInput = {
     id?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     title?: SortOrder
     description?: SortOrder
     isDone?: SortOrder
+    userId?: SortOrder
   }
 
-  export type TasksSumOrderByAggregateInput = {
+  export type TaskMinOrderByAggregateInput = {
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    title?: SortOrder
+    description?: SortOrder
+    isDone?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type TaskSumOrderByAggregateInput = {
+    id?: SortOrder
+    userId?: SortOrder
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -3617,12 +3890,44 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
+  export type TaskCreateNestedManyWithoutUserInput = {
+    create?: XOR<TaskCreateWithoutUserInput, TaskUncheckedCreateWithoutUserInput> | TaskCreateWithoutUserInput[] | TaskUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TaskCreateOrConnectWithoutUserInput | TaskCreateOrConnectWithoutUserInput[]
+    createMany?: TaskCreateManyUserInputEnvelope
+    connect?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+  }
+
+  export type TaskUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<TaskCreateWithoutUserInput, TaskUncheckedCreateWithoutUserInput> | TaskCreateWithoutUserInput[] | TaskUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TaskCreateOrConnectWithoutUserInput | TaskCreateOrConnectWithoutUserInput[]
+    createMany?: TaskCreateManyUserInputEnvelope
+    connect?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+  }
+
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
+  export type TaskUpdateManyWithoutUserNestedInput = {
+    create?: XOR<TaskCreateWithoutUserInput, TaskUncheckedCreateWithoutUserInput> | TaskCreateWithoutUserInput[] | TaskUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TaskCreateOrConnectWithoutUserInput | TaskCreateOrConnectWithoutUserInput[]
+    upsert?: TaskUpsertWithWhereUniqueWithoutUserInput | TaskUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: TaskCreateManyUserInputEnvelope
+    set?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+    disconnect?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+    delete?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+    connect?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+    update?: TaskUpdateWithWhereUniqueWithoutUserInput | TaskUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: TaskUpdateManyWithWhereWithoutUserInput | TaskUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: TaskScalarWhereInput | TaskScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -3633,8 +3938,36 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type TaskUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<TaskCreateWithoutUserInput, TaskUncheckedCreateWithoutUserInput> | TaskCreateWithoutUserInput[] | TaskUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TaskCreateOrConnectWithoutUserInput | TaskCreateOrConnectWithoutUserInput[]
+    upsert?: TaskUpsertWithWhereUniqueWithoutUserInput | TaskUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: TaskCreateManyUserInputEnvelope
+    set?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+    disconnect?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+    delete?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+    connect?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+    update?: TaskUpdateWithWhereUniqueWithoutUserInput | TaskUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: TaskUpdateManyWithWhereWithoutUserInput | TaskUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: TaskScalarWhereInput | TaskScalarWhereInput[]
+  }
+
+  export type UserCreateNestedOneWithoutTasksInput = {
+    create?: XOR<UserCreateWithoutTasksInput, UserUncheckedCreateWithoutTasksInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTasksInput
+    connect?: UserWhereUniqueInput
+  }
+
   export type BoolFieldUpdateOperationsInput = {
     set?: boolean
+  }
+
+  export type UserUpdateOneRequiredWithoutTasksNestedInput = {
+    create?: XOR<UserCreateWithoutTasksInput, UserUncheckedCreateWithoutTasksInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTasksInput
+    upsert?: UserUpsertWithoutTasksInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutTasksInput, UserUpdateWithoutTasksInput>, UserUncheckedUpdateWithoutTasksInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -3671,6 +4004,20 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -3731,6 +4078,34 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedBoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -3742,6 +4117,151 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type TaskCreateWithoutUserInput = {
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    title: string
+    description: string
+    isDone: boolean
+  }
+
+  export type TaskUncheckedCreateWithoutUserInput = {
+    id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    title: string
+    description: string
+    isDone: boolean
+  }
+
+  export type TaskCreateOrConnectWithoutUserInput = {
+    where: TaskWhereUniqueInput
+    create: XOR<TaskCreateWithoutUserInput, TaskUncheckedCreateWithoutUserInput>
+  }
+
+  export type TaskCreateManyUserInputEnvelope = {
+    data: TaskCreateManyUserInput | TaskCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type TaskUpsertWithWhereUniqueWithoutUserInput = {
+    where: TaskWhereUniqueInput
+    update: XOR<TaskUpdateWithoutUserInput, TaskUncheckedUpdateWithoutUserInput>
+    create: XOR<TaskCreateWithoutUserInput, TaskUncheckedCreateWithoutUserInput>
+  }
+
+  export type TaskUpdateWithWhereUniqueWithoutUserInput = {
+    where: TaskWhereUniqueInput
+    data: XOR<TaskUpdateWithoutUserInput, TaskUncheckedUpdateWithoutUserInput>
+  }
+
+  export type TaskUpdateManyWithWhereWithoutUserInput = {
+    where: TaskScalarWhereInput
+    data: XOR<TaskUpdateManyMutationInput, TaskUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type TaskScalarWhereInput = {
+    AND?: TaskScalarWhereInput | TaskScalarWhereInput[]
+    OR?: TaskScalarWhereInput[]
+    NOT?: TaskScalarWhereInput | TaskScalarWhereInput[]
+    id?: IntFilter<"Task"> | number
+    createdAt?: DateTimeFilter<"Task"> | Date | string
+    updatedAt?: DateTimeFilter<"Task"> | Date | string
+    title?: StringFilter<"Task"> | string
+    description?: StringFilter<"Task"> | string
+    isDone?: BoolFilter<"Task"> | boolean
+    userId?: IntFilter<"Task"> | number
+  }
+
+  export type UserCreateWithoutTasksInput = {
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    email: string
+    hash: string
+    firstName?: string | null
+    lastName?: string | null
+  }
+
+  export type UserUncheckedCreateWithoutTasksInput = {
+    id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    email: string
+    hash: string
+    firstName?: string | null
+    lastName?: string | null
+  }
+
+  export type UserCreateOrConnectWithoutTasksInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutTasksInput, UserUncheckedCreateWithoutTasksInput>
+  }
+
+  export type UserUpsertWithoutTasksInput = {
+    update: XOR<UserUpdateWithoutTasksInput, UserUncheckedUpdateWithoutTasksInput>
+    create: XOR<UserCreateWithoutTasksInput, UserUncheckedCreateWithoutTasksInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutTasksInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutTasksInput, UserUncheckedUpdateWithoutTasksInput>
+  }
+
+  export type UserUpdateWithoutTasksInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
+    hash?: StringFieldUpdateOperationsInput | string
+    firstName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type UserUncheckedUpdateWithoutTasksInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    email?: StringFieldUpdateOperationsInput | string
+    hash?: StringFieldUpdateOperationsInput | string
+    firstName?: NullableStringFieldUpdateOperationsInput | string | null
+    lastName?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type TaskCreateManyUserInput = {
+    id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    title: string
+    description: string
+    isDone: boolean
+  }
+
+  export type TaskUpdateWithoutUserInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    isDone?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type TaskUncheckedUpdateWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    isDone?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type TaskUncheckedUpdateManyWithoutUserInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    isDone?: BoolFieldUpdateOperationsInput | boolean
   }
 
 
