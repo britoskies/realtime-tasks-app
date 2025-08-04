@@ -1,0 +1,40 @@
+# Root
+node_modules/
+.env
+.env.*.local
+*.log
+.DS_Store
+
+# Frontend (React Native - Expo)
+frontend/.expo/
+frontend/.expo-shared/
+frontend/node_modules/
+frontend/web-build/
+frontend/dist/
+frontend/ios/build/
+frontend/android/build/
+frontend/android/app/build/
+frontend/coverage/
+frontend/npm-debug.log
+frontend/yarn-debug.log
+frontend/yarn-error.log
+
+# Backend (NestJS + Prisma)
+backend/node_modules/
+backend/dist/
+backend/.env
+backend/prisma/dev.db
+backend/prisma/dev.db-journal
+backend/prisma/migrations/
+backend/coverage/
+backend/npm-debug.log
+backend/yarn-debug.log
+backend/yarn-error.log
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
