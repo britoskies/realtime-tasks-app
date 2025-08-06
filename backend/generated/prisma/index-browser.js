@@ -130,6 +130,13 @@ exports.Prisma.UserScalarFieldEnum = {
   lastName: 'lastName'
 };
 
+exports.Prisma.TaskListScalarFieldEnum = {
+  id: 'id',
+  createdAt: 'createdAt',
+  title: 'title',
+  shareToken: 'shareToken'
+};
+
 exports.Prisma.TaskScalarFieldEnum = {
   id: 'id',
   createdAt: 'createdAt',
@@ -137,7 +144,7 @@ exports.Prisma.TaskScalarFieldEnum = {
   title: 'title',
   description: 'description',
   isDone: 'isDone',
-  userId: 'userId'
+  listId: 'listId'
 };
 
 exports.Prisma.SortOrder = {
@@ -158,6 +165,7 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   User: 'User',
+  TaskList: 'TaskList',
   Task: 'Task'
 };
 

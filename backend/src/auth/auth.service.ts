@@ -30,10 +30,7 @@ export class AuthService {
           hash,
         },
       });
-      return {
-        token: this.signToken(user.id, user.email),
-        msg: `User ${user.firstName} created successfully`,
-      };
+      return this.signToken(user.id, user.email);
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError) {
         if (error.code === PrismaErrorCodes.UniqueKey) {
@@ -71,7 +68,7 @@ export class AuthService {
       email,
     };
     const token = await this.jwt.signAsync(payload, {
-      expiresIn: '10m',
+      expiresIn: '30m',
       secret: this.config.get('JWT_SECRET'),
     });
 
